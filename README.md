@@ -1,33 +1,42 @@
-# 🏥 ICU Resource Governance System
+# 🛏️ ICU Resource Governance System
 
-AI-powered ICU bed allocation and patient risk prediction system.
+[![Python](https://img.shields.io/badge/Python-3.10-blue)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104-red)](https://fastapi.tiangolo.com)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![Healthcare](https://img.shields.io/badge/Healthcare-AI-brightgreen)](https://github.com/Nathan1scott)
 
-## Features
+> An AI-powered ICU bed allocation and patient risk prediction system. Helps hospitals prioritize critical patients and optimize intensive care resources.
 
-- **Risk Score Calculation** (0-100 points)
-  - Age: 0-20 points
-  - Vital Signs: 0-30 points
-  - Lab Values: 0-25 points
-  - Comorbidities: 0-25 points
+---
 
-- **Risk Levels**
-  - 🔴 CRITICAL (81-100): Immediate ICU transfer
-  - 🟠 HIGH (61-80): ICU review within 2 hours
-  - 🟡 MEDIUM (31-60): Monitor closely
-  - 🟢 LOW (0-30): Ward-level care
+## 📋 Problem Statement
 
-- **ICU Bed Management**
-  - Real-time availability tracking
-  - Priority-based allocation
-  - Waitlist management
+ICU beds are a scarce and expensive resource. During crises (pandemics, flu seasons, natural disasters), demand often exceeds supply. Without standardized prioritization:
 
-## Quick Start
+- 🔴 **Critical patients may wait too long** for admission
+- 🟡 **Low-risk patients may occupy beds** needed for emergencies
+- 📊 **Decisions are subjective** without objective risk scores
+- ⏰ **Waitlists are managed manually** leading to delays
 
-```bash
-# Install dependencies
-pip install fastapi uvicorn pandas numpy
+**The Solution:** An AI system that objectively scores patient risk, prioritizes ICU admission, and provides transparent resource allocation.
 
-# Run the API
-python icu_api.py
+---
 
-# Open icu_dashboard.html in your browser
+## 🎯 Key Features
+
+| Feature | Description |
+|---------|-------------|
+| **Patient Risk Scoring** | Calculates risk score (0-100) based on clinical factors |
+| **Risk Level Classification** | Categorizes as Critical/High/Medium/Low |
+| **ICU Bed Availability** | Real-time tracking of total, occupied, and available beds |
+| **Priority-Based Allocation** | Critical patients get immediate admission |
+| **Waitlist Management** | Transparent queue with estimated wait times |
+| **Resource Dashboard** | Visualize occupancy rates and patient distribution |
+| **Mobile Responsive** | Works on phones, tablets, and desktops |
+| **Auto-Refresh** | Real-time updates every 30 seconds |
+
+---
+
+## 📊 Risk Score Calculation
+
+The risk score (0-100) is calculated using a weighted algorithm based on established clinical criteria (NEWS2, MEWS, qSOFA):
